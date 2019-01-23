@@ -1,0 +1,22 @@
+<entry name="trust">
+    <color>color2</color>
+</entry>
+<entry name="untrust">
+    <color>color1</color>
+</entry>
+<entry name="TEST" />
+<entry name="GTP">
+    <color>color10</color>
+</entry>
+<entry name="DIAMETER">
+    <color>color28</color>
+</entry>
+<entry name="DNS">
+    <color>color15</color>
+</entry>
+<entry name="S8">
+    <color>color24</color>
+</entry>
+<entry name="S6a">
+    <color>color6</color>
+</entry>

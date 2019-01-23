@@ -36,10 +36,4 @@ snippets:
   - name: zone
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/zone
     file: zone.xml
-  - name: mobile-tags
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
-    file: mobile-tags.xml
-  - name: mobile-profiles
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles
-    file: mobile-profiles.xml
 

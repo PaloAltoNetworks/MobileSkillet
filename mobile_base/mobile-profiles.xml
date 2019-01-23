@@ -1,0 +1,729 @@
+<gtp>
+    <entry name="GTP Profile">
+        <gtp-inspection>
+            <gtp-c>
+                <gtpv2-c>
+                    <validity-checks>
+                        <reserved-ie>yes</reserved-ie>
+                        <length-of-ie>yes</length-of-ie>
+                        <reserved-hdr-field>yes</reserved-hdr-field>
+                        <unknown-message>yes</unknown-message>
+                        <action>alert</action>
+                    </validity-checks>
+                    <stateful-inspection>yes</stateful-inspection>
+                </gtpv2-c>
+                <gtpv1-c>
+                    <validity-checks>
+                        <reserved-ie>yes</reserved-ie>
+                        <order-of-ie>yes</order-of-ie>
+                        <length-of-ie>yes</length-of-ie>
+                        <reserved-hdr-field>yes</reserved-hdr-field>
+                        <unknown-message>yes</unknown-message>
+                        <action>alert</action>
+                    </validity-checks>
+                    <stateful-inspection>yes</stateful-inspection>
+                </gtpv1-c>
+            </gtp-c>
+            <gtp-u>
+                <validity-checks>
+                    <reserved-ie>yes</reserved-ie>
+                    <order-of-ie>yes</order-of-ie>
+                    <length-of-ie>yes</length-of-ie>
+                    <reserved-hdr-field>yes</reserved-hdr-field>
+                    <unknown-message>yes</unknown-message>
+                    <action>alert</action>
+                </validity-checks>
+                <gtpu-content-inspection>yes</gtpu-content-inspection>
+                <user-ip-spoofing>alert</user-ip-spoofing>
+                <gtp-in-gtp>alert</gtp-in-gtp>
+            </gtp-u>
+        </gtp-inspection>
+        <filtering>
+            <rat>
+                <utran>allow</utran>
+                <geran>allow</geran>
+                <wlan>alert</wlan>
+                <gan>allow</gan>
+                <hspa-evolution>allow</hspa-evolution>
+                <eutran>allow</eutran>
+                <virtual>alert</virtual>
+            </rat>
+            <imsi-prefix>
+                <entry name="311580*">
+                    <description>USCC Subs</description>
+                    <action>allow</action>
+                </entry>
+                <entry name="310120*">
+                    <description>Sprint Subs</description>
+                    <action>allow</action>
+                </entry>
+                <entry name="310260*">
+                    <description>T-Mobile Subs</description>
+                    <action>allow</action>
+                </entry>
+                <entry name="*">
+                    <description>All others</description>
+                    <action>alert</action>
+                </entry>
+            </imsi-prefix>
+        </filtering>
+        <gtp-log>
+            <user-location>yes</user-location>
+        </gtp-log>
+    </entry>
+</gtp>
+<vulnerability>
+    <entry name="Alert-Low-to-Critical">
+        <rules>
+            <entry name="alert-low-to-critcial">
+                <action>
+                    <alert />
+                </action>
+                <vendor-id>
+                    <member>any</member>
+                </vendor-id>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                    <member>low</member>
+                </severity>
+                <cve>
+                    <member>any</member>
+                </cve>
+                <threat-name>any</threat-name>
+                <host>any</host>
+                <category>any</category>
+                <packet-capture>single-packet</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+    <entry name="Diameter_Inbound_Vuln">
+        <description>Customized Signatures for DIAMETER flood protection on inbound traffic</description>
+        <threat-exception>
+            <entry name="40051">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40050">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+        </threat-exception>
+        <rules>
+            <entry name="Alert">
+                <action>
+                    <alert />
+                </action>
+                <vendor-id>
+                    <member>any</member>
+                </vendor-id>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                </severity>
+                <cve>
+                    <member>any</member>
+                </cve>
+                <threat-name>any</threat-name>
+                <host>any</host>
+                <category>any</category>
+                <packet-capture>disable</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+    <entry name="Diameter_Outbound_Vuln">
+        <description>Customized Signatures for DIAMETER flood protection on outbound traffic</description>
+        <threat-exception>
+            <entry name="40051">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40050">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+        </threat-exception>
+        <rules>
+            <entry name="Alert">
+                <action>
+                    <alert />
+                </action>
+                <vendor-id>
+                    <member>any</member>
+                </vendor-id>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                </severity>
+                <cve>
+                    <member>any</member>
+                </cve>
+                <threat-name>any</threat-name>
+                <host>any</host>
+                <category>any</category>
+                <packet-capture>disable</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+    <entry name="GTP_Inbound_Vuln">
+        <threat-exception>
+            <entry name="40066">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40063">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40064">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40065">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40054">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40056">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40057">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40055">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40067">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+        </threat-exception>
+        <rules>
+            <entry name="Alert">
+                <action>
+                    <alert />
+                </action>
+                <vendor-id>
+                    <member>any</member>
+                </vendor-id>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                </severity>
+                <cve>
+                    <member>any</member>
+                </cve>
+                <threat-name>any</threat-name>
+                <host>any</host>
+                <category>any</category>
+                <packet-capture>disable</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+    <entry name="GTP_Outbound_Vuln">
+        <threat-exception>
+            <entry name="40066">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40063">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40064">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40065">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40054">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40056">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40057">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40055">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40067">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+        </threat-exception>
+        <rules>
+            <entry name="Alert">
+                <action>
+                    <alert />
+                </action>
+                <vendor-id>
+                    <member>any</member>
+                </vendor-id>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                </severity>
+                <cve>
+                    <member>any</member>
+                </cve>
+                <threat-name>any</threat-name>
+                <host>any</host>
+                <category>any</category>
+                <packet-capture>disable</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+    <entry name="GTP_RAN_Vuln">
+        <threat-exception>
+            <entry name="40066">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40063">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40064">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40065">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40054">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40056">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40057">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40055">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+            <entry name="40067">
+                <action>
+                    <default />
+                </action>
+                <time-attribute min="4.0.0">
+                    <interval>2</interval>
+                    <threshold>255</threshold>
+                    <track-by>source-and-destination</track-by>
+                </time-attribute>
+            </entry>
+        </threat-exception>
+        <rules>
+            <entry name="Alert">
+                <action>
+                    <alert />
+                </action>
+                <vendor-id>
+                    <member>any</member>
+                </vendor-id>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                </severity>
+                <cve>
+                    <member>any</member>
+                </cve>
+                <threat-name>any</threat-name>
+                <host>any</host>
+                <category>any</category>
+                <packet-capture>disable</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+</vulnerability>
+<spyware>
+    <entry name="Alet-Critical_High-Med">
+        <botnet-domains>
+            <lists>
+                <entry name="default-paloalto-dns">
+                    <action>
+                        <sinkhole />
+                    </action>
+                </entry>
+            </lists>
+            <sinkhole>
+                <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
+                <ipv6-address>::1</ipv6-address>
+            </sinkhole>
+        </botnet-domains>
+        <rules>
+            <entry name="Alet-Crit-High-Med">
+                <action>
+                    <alert />
+                </action>
+                <severity>
+                    <member>critical</member>
+                    <member>high</member>
+                    <member>medium</member>
+                </severity>
+                <threat-name>any</threat-name>
+                <category>any</category>
+                <packet-capture>disable</packet-capture>
+            </entry>
+        </rules>
+    </entry>
+</spyware>
+<sctp>
+    <entry name="S6a_Profile">
+        <sctp-inspection>
+            <validity-checks>
+                <unknown-chunk>alert</unknown-chunk>
+                <chunk-flags>alert</chunk-flags>
+                <invalid-length>allow</invalid-length>
+            </validity-checks>
+            <log-setting>
+                <sctp-start>yes</sctp-start>
+                <sctp-end>yes</sctp-end>
+            </log-setting>
+        </sctp-inspection>
+        <sctp-filtering>
+            <sctp-diameter>
+                <entry name="Allow S6a">
+                    <diameter-application-id>
+                        <entry name="3GPP-S6a/S6d">
+                            <diameter-cmd-code>
+                                <member>any</member>
+                            </diameter-cmd-code>
+                            <diameter-avp>
+                                <member>any</member>
+                            </diameter-avp>
+                        </entry>
+                    </diameter-application-id>
+                    <action>allow</action>
+                </entry>
+                <entry name="Block-Non-S6a">
+                    <diameter-application-id>
+                        <entry name="any">
+                            <diameter-cmd-code>
+                                <member>any</member>
+                            </diameter-cmd-code>
+                            <diameter-avp>
+                                <member>any</member>
+                            </diameter-avp>
+                        </entry>
+                    </diameter-application-id>
+                    <action>block</action>
+                </entry>
+            </sctp-diameter>
+        </sctp-filtering>
+    </entry>
+    <entry version="1.0" name="SIGTRAN_Alert_Cat1">
+        <sctp-filtering>
+            <sctp-ss7>
+                <entry name="GSMA CAT1 MAP Filter">
+                    <ss7-cp-ssn>
+                        <entry name="any-map">
+                            <ss7-op-code>
+                                <member>SendRoutingInfo</member>
+                                <member>SendRoutingInfoForLCS</member>
+                                <member>SendRoutingInfoForGprs</member>
+                                <member>SendIMSI</member>
+                                <member>AnyTimeInterrogation</member>
+                                <member>AnyTimeSubscriptionInterrogation</member>
+                                <member>FailureReport</member>
+                                <member>AnyTimeModification</member>
+                                <member>SendIdentification</member>
+                                <member>ResumeCallHandling</member>
+                                <member>SendParameters</member>
+                                <member>UnstructuredSSRequest</member>
+                                <member>UnstructuredSSNotify</member>
+                                <member>RemoteUserFree</member>
+                                <member>CheckIMEI</member>
+                                <member>NoteSubscriberDataModified</member>
+                                <member>SubscriberLocationReport</member>
+                            </ss7-op-code>
+                            <ss7-cp-gt>
+                                <member>any</member>
+                            </ss7-cp-gt>
+                        </entry>
+                    </ss7-cp-ssn>
+                    <action>alert</action>
+                </entry>
+            </sctp-ss7>
+        </sctp-filtering>
+        <sctp-inspection>
+            <validity-checks>
+                <unknown-chunk>alert</unknown-chunk>
+                <chunk-flags>alert</chunk-flags>
+                <invalid-length>allow</invalid-length>
+            </validity-checks>
+            <log-setting>
+                <sctp-start>yes</sctp-start>
+                <sctp-end>yes</sctp-end>
+            </log-setting>
+        </sctp-inspection>
+    </entry>
+</sctp>
+<virus>
+    <entry name="alert-all">
+        <decoder>
+            <entry name="http">
+                <action>alert</action>
+                <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="smtp">
+                <action>alert</action>
+                <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="imap">
+                <action>alert</action>
+                <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="pop3">
+                <action>alert</action>
+                <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="ftp">
+                <action>alert</action>
+                <wildfire-action>alert</wildfire-action>
+            </entry>
+            <entry name="smb">
+                <action>alert</action>
+                <wildfire-action>alert</wildfire-action>
+            </entry>
+        </decoder>
+        <packet-capture>yes</packet-capture>
+    </entry>
+</virus>
+<file-blocking>
+    <entry name="alert-all">
+        <rules>
+            <entry name="alert-all">
+                <application>
+                    <member>any</member>
+                </application>
+                <file-type>
+                    <member>any</member>
+                </file-type>
+                <direction>both</direction>
+                <action>alert</action>
+            </entry>
+        </rules>
+    </entry>
+</file-blocking>
+<url-filtering>
+    <entry name="alert-C2-Malware-Phishing">
+        <credential-enforcement>
+            <mode>
+                <disabled />
+            </mode>
+            <log-severity>medium</log-severity>
+        </credential-enforcement>
+        <action>block</action>
+        <alert>
+            <member>command-and-control</member>
+            <member>malware</member>
+            <member>phishing</member>
+        </alert>
+    </entry>
+</url-filtering>

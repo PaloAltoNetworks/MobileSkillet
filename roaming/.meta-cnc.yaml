@@ -1,0 +1,51 @@
+name: mobile-roaming
+label: Mobile Roaming Snippets
+description: Mobile Roaming Configuration
+type: panos
+extends: mobile_baseline_panos
+
+labels:
+  service_type: mobile_panos
+
+variables:
+  - name: MME_SUBNET
+    description: MME Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: SGW_SUBNET
+    description: SGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: SUB_SUBNET
+    description: Subscriber Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PGW_SUBNET
+    description: PGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_SGW_SUBNET
+    description: Peer SGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_PGW_SUBNET
+    description: Peer PGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: HSS_SUBNET
+    description: HSS Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_HSS_SUBNET
+    description: Peer HSS Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+
+snippets:
+  - name: roaming-addresses
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
+    file: roaming-addresses.xml
+  - name: roaming-security-rules
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+    file: roaming-security-rules.xml
+
