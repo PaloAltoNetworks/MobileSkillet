@@ -1,0 +1,39 @@
+name: mobile-baseline
+label: Mobile Baseline Snippets
+description: Mobile Basline Configuration
+type: panos
+extends: snippets_panos
+
+labels:
+  service_type: mobile_base_panos
+
+variables:
+  - name: FW_NAME
+    description: Device Name
+    default: panos-01
+    type_hint: text
+  - name: INTF_TAP
+    description: TAP Interface
+    default: ethernet1/1
+    type_hint: text
+  - name: ZONE_TAP
+    description: Zone Tapper
+    default: tap
+    type_hint: text
+  - name: DNS_1
+    description: Primary DNS Server
+    default: 8.8.8.8
+    type_hint: ip_address
+  - name: DNS_2
+    description: Secondary DNS Server
+    default: 8.8.4.4
+    type_hint: ip_address
+
+snippets:
+  - name: interface
+    xpath: /config/devices/entry[@name='localhost.localdomain']/network/interface
+    file: interface.xml
+  - name: zone
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/zone
+    file: zone.xml
+

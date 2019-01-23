@@ -1,0 +1,7 @@
+<entry name="Tap">
+    <network>
+        <tap>
+            <member>{{ INTF_TAP }}</member>
+        </tap>
+    </network>
+</entry>
