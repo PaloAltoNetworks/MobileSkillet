@@ -1,0 +1,12 @@
+<entry name="enodeB_Subnet">
+  <ip-netmask>{{ ENODEB_SUBNET }}</ip-netmask>
+</entry>
+<entry name="MME_Subnet">
+  <ip-netmask>{{ MME_SUBNET }}</ip-netmask>
+</entry>
+<entry name="SGW_Subnet">
+  <ip-netmask>{{ SGW_SUBNET }}</ip-netmask>
+</entry>
+<entry name="Subscriber_Subnet">
+  <ip-netmask>>{{ SUB_SUBNET }}</ip-netmask>
+</entry>

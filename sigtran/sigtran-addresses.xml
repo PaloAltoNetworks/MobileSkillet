@@ -1,0 +1,6 @@
+<entry name="SIGTRAN_Subnet">
+  <ip-netmask>>{{ SIGTRAN_SUBNET }}</ip-netmask>
+</entry>
+<entry name="Peer_SIGTRAN_Subnet">
+  <ip-netmask>>{{ PEER_SIGTRAN_SUBNET }}</ip-netmask>
+</entry>

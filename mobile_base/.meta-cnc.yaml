@@ -28,6 +28,10 @@ variables:
     description: Secondary DNS Server
     default: 8.8.4.4
     type_hint: ip_address
+  - name: SFN_SERVER
+    description: SafeNetworking Server IP
+    default: 192.168.1.1
+    type_hint: ip_address
 
 snippets:
   - name: interface
@@ -42,4 +46,6 @@ snippets:
   - name: mobile-profiles
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles
     file: mobile-profiles.xml
-
+  - name: safenetworking
+    xpath: /config/shared/log-settings
+    file: sfn.xml

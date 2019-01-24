@@ -1,39 +1,35 @@
-name: mobile-baseline
-label: Mobile Baseline Snippets
-description: Mobile Basline Configuration
+name: mobile-ran
+label: Mobile RAN Snippets
+description: Mobile RAN Configuration
 type: panos
-extends: snippets_panos
+extends: mobile_baseline_panos
 
 labels:
-  service_type: mobile_base_panos
+  service_type: mobile_panos
 
 variables:
-  - name: FW_NAME
-    description: Device Name
-    default: panos-01
-    type_hint: text
-  - name: INTF_TAP
-    description: TAP Interface
-    default: ethernet1/1
-    type_hint: text
-  - name: ZONE_TAP
-    description: Zone Tapper
-    default: tap
-    type_hint: text
-  - name: DNS_1
-    description: Primary DNS Server
-    default: 8.8.8.8
+  - name: ENODEB_SUBNET
+    description: enodeB Subnet
+    default: 192.168.1.0/24
     type_hint: ip_address
-  - name: DNS_2
-    description: Secondary DNS Server
-    default: 8.8.4.4
+  - name: MME_SUBNET
+    description: MME Subnet
+    default: 192.168.1.0/24
     type_hint: ip_address
-
+  - name: SGW_SUBNET
+    description: SGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: SUB_SUBNET
+    description: Subscriber Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  
 snippets:
-  - name: interface
-    xpath: /config/devices/entry[@name='localhost.localdomain']/network/interface
-    file: interface.xml
-  - name: zone
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/zone
-    file: zone.xml
+  - name: ran-addresses
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
+    file: ran-addresses.xml
+  - name: ran-security-rules
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+    file: ran-security-rules.xml
 

@@ -1,4 +1,3 @@
-<address>
   <entry name="MME_Subnet">
     <ip-netmask>{{ MME_SUBNET }}</ip-netmask>
   </entry>
@@ -26,4 +25,3 @@
   <entry name="Peer_MME_Subnet">
     <ip-netmask>>{{ PEER_MME_SUBNET }}</ip-netmask>
   </entry>
-</address>

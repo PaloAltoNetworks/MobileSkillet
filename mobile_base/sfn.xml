@@ -1,0 +1,53 @@
+<profiles>
+    <entry name="SN Log Forwarder">
+        <match-list>
+            <entry name="SN_GTP_LF">
+                <send-syslog>
+                    <member>SFN_Mobile</member>
+                </send-syslog>
+                <log-type>gtp</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>no</send-to-panorama>
+            </entry>
+            <entry name="SN_Threat_LF">
+                <send-syslog>
+                    <member>SFN_Syslog</member>
+                </send-syslog>
+                <log-type>threat</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>no</send-to-panorama>
+            </entry>
+            <entry name="SN_WF_LF">
+                <send-syslog>
+                    <member>SFN_Syslog</member>
+                </send-syslog>
+                <log-type>wildfire</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>no</send-to-panorama>
+            </entry>
+        </match-list>
+    </entry>
+</profiles>
+<syslog>
+    <entry name="SFN_Syslog">
+        <server>
+            <entry name="SafeNetworking">
+                <transport>UDP</transport>
+                <port>5514</port>
+                <format>BSD</format>
+                <server>{{ SFN_SERVER }}</server>
+                <facility>LOG_USER</facility>
+            </entry>
+        </server>
+    <entry name="SFN_Mobile">
+        <server>
+            <entry name="SafeNetworking_Mobile">
+                <transport>UDP</transport>
+                <port>5516</port>
+                <format>BSD</format>
+                <server>{{ SFN_SERVER }}</server>
+                <facility>LOG_USER</facility>
+            </entry>
+        </server>
+    </entry>
+</syslog>
