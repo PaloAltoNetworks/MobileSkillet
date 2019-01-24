@@ -3,7 +3,6 @@ label: Mobile Roaming Snippets
 description: Mobile Roaming Configuration
 type: panos
 extends: mobile_baseline_panos
-
 labels:
   service_type: mobile_panos
 
