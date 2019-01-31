@@ -1,5 +1,5 @@
-name: mobile-sigtan
-label: Mobile Sigtran Snippets
+name: mobile-sigtan-v81
+label: v8.1 Mobile Sigtran Snippets
 description: Mobile Sigtran Configuration
 type: panos
 extends: mobile_baseline_panos

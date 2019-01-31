@@ -1,5 +1,5 @@
-name: mobile-roaming
-label: Mobile Roaming Snippets
+name: mobile-roaming-v81
+label: v8.1 Mobile Roaming Snippets
 description: Mobile Roaming Configuration
 type: panos
 extends: mobile_baseline_panos

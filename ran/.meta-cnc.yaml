@@ -1,5 +1,5 @@
-name: mobile-ran
-label: Mobile RAN Snippets
+name: mobile-ran-v81
+label: v8.1 Mobile RAN Snippets
 description: Mobile RAN Configuration
 type: panos
 extends: mobile_baseline_panos
