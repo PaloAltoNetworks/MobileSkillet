@@ -2,7 +2,7 @@ name: mobile-baseline
 label: Mobile Baseline Snippets
 description: Mobile Basline Configuration
 type: panos
-extends: snippets_panos
+extends: skillet_panos_v81
 
 labels:
   service_type: mobile_base_panos
