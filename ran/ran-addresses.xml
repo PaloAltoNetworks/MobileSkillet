@@ -8,5 +8,5 @@
   <ip-netmask>{{ SGW_SUBNET }}</ip-netmask>
 </entry>
 <entry name="Subscriber_Subnet">
-  <ip-netmask>>{{ SUB_SUBNET }}</ip-netmask>
+  <ip-netmask>{{ SUB_SUBNET }}</ip-netmask>
 </entry>
