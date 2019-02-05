@@ -8,6 +8,10 @@ labels:
   service_type: mobile_panos
 
 variables:
+  - name: PLACEHOLDER
+    description: Variable Placeholder
+    default: Ignore
+    type_hint: text
 
 
 snippets:
