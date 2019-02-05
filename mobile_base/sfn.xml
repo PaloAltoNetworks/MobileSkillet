@@ -39,6 +39,7 @@
                 <facility>LOG_USER</facility>
             </entry>
         </server>
+    </entry>
     <entry name="SFN_Mobile">
         <server>
             <entry name="SafeNetworking_Mobile">
