@@ -5,23 +5,23 @@
     <ip-netmask>{{ SGW_SUBNET }}</ip-netmask>
   </entry>
   <entry name="Subscriber_Subnet">
-    <ip-netmask>>{{ SUB_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ SUB_SUBNET }}</ip-netmask>
   </entry>
   <entry name="PGW_Subnet">
-    <ip-netmask>>{{ PGW_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ PGW_SUBNET }}</ip-netmask>
   </entry>
   <entry name="Peer_SGW_Subnet">
-    <ip-netmask>>{{ PEER_SGW_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ PEER_SGW_SUBNET }}</ip-netmask>
   </entry>
   <entry name="Peer_PGW_Subnet">
-    <ip-netmask>>{{ PEER_PGW_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ PEER_PGW_SUBNET }}</ip-netmask>
   </entry>
   <entry name="HSS_Subnet">
-    <ip-netmask>>{{ HSS_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ HSS_SUBNET }}</ip-netmask>
   </entry>
   <entry name="Peer_HSS_Subnet">
-    <ip-netmask>>{{ PEER_HSS_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ PEER_HSS_SUBNET }}</ip-netmask>
   </entry>
   <entry name="Peer_MME_Subnet">
-    <ip-netmask>>{{ PEER_MME_SUBNET }}</ip-netmask>
+    <ip-netmask>{{ PEER_MME_SUBNET }}</ip-netmask>
   </entry>
