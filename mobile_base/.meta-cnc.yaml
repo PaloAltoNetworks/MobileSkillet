@@ -42,6 +42,12 @@ variables:
     type_hint: ip_address
 
 snippets:
+  - name: device_system
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+    file: device_system.xml
+  - name: device_setting
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+    file: device_setting.xml
   - name: interface
     xpath: /config/devices/entry[@name='localhost.localdomain']/network/interface
     file: interface.xml
