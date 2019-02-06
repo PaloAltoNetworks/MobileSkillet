@@ -2,7 +2,7 @@ name: mobile-baseline-v81
 label: v8.1 Mobile Baseline Snippets
 description: Mobile Basline Configuration
 type: panos
-extends: skillet_panos_v81
+extends:
 
 labels:
   service_type: mobile_base_panos
@@ -27,6 +27,14 @@ variables:
   - name: DNS_2
     description: Secondary DNS Server
     default: 8.8.4.4
+    type_hint: ip_address
+  - name: NTP_1
+    description: Primary NTP Server
+    default: pool.ntp.org
+    type_hint: ip_address
+  - name: NTP_2
+    description: Secondary NTP Server
+    default: pool.ntp.org
     type_hint: ip_address
   - name: SFN_SERVER
     description: SafeNetworking Server IP
