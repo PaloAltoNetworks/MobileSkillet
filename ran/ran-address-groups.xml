@@ -1,0 +1,25 @@
+<entry name="SGW_Addresses">
+    <static>
+        <member>SGW_Subnet</member>
+    </static>
+</entry>
+<entry name="PGW_Addresses">
+    <static>
+        <member>PGW_Subnet</member>
+    </static>
+</entry>
+<entry name="MME_Addresses">
+    <static>
+        <member>MME_Subnet</member>
+    </static>
+</entry>
+<entry name="HSS_Addresses">
+    <static>
+        <member>HSS_Subnet</member>
+    </static>
+</entry>
+<entry name="eNodeB_Addresses">
+    <static>
+        <member>enodeB_Subnet</member>
+    </static>
+</entry>
