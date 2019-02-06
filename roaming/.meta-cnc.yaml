@@ -28,6 +28,10 @@ variables:
     description: Peer SGW Subnet
     default: 192.168.1.0/24
     type_hint: ip_address
+  - name: PEER_MME_SUBNET
+    description: Peer MME Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
   - name: PEER_PGW_SUBNET
     description: Peer PGW Subnet
     default: 192.168.1.0/24
