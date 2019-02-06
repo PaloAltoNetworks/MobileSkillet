@@ -49,6 +49,9 @@ snippets:
   - name: roaming-addresses
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
     file: roaming-addresses.xml
+  - name: roaming-address-groups
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address-group
+    file: roaming-address-groups.xml
   - name: roaming-security-rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: roaming-security-rules.xml

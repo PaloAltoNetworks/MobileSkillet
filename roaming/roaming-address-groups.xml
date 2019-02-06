@@ -1,0 +1,46 @@
+<entry name="Peer_SGW_Addresses">
+  <static>
+    <member>Peer_SGW_Subnet</member>
+  </static>
+</entry>
+<entry name="Peer_PGW_Addresses">
+  <static>
+    <member>Peer_PGW_Subnet</member>
+  </static>
+</entry>
+<entry name="Peer_HSS_Addresses">
+  <static>
+    <member>Peer_HSS_Subnet</member>
+  </static>
+</entry>
+<entry name="Peer_MME_Addresses">
+  <static>
+    <member>Peer_MME_Subnet</member>
+  </static>
+</entry>
+<entry name="SGW_Addresses">
+  <static>
+    <member>SGW_Subnet</member>
+  </static>
+</entry>
+<entry name="PGW_Addresses">
+  <static>
+    <member>PGW_Subnet</member>
+  </static>
+</entry>
+<entry name="MME_Addresses">
+  <static>
+    <member>MME_Subnet</member>
+  </static>
+</entry>
+<entry name="HSS_Addresses">
+  <static>
+    <member>HSS_Subnet</member>
+  </static>
+</entry>
+<entry name="eNodeB_Addresses">
+  <static>
+    <member>enodeB_Subnet</member>
+  </static>
+</entry>
+
