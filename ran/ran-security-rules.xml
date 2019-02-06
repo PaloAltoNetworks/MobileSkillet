@@ -16,14 +16,14 @@
         <member>Tap</member>
     </from>
     <source>
-    <member>enodeB_Subnet</member>
-    <member>MME_Subnet</member>
-    <member>SGW_Subnet</member>
+    <member>eNodeB_Addresses</member>
+    <member>MME_Addresses</member>
+    <member>SGW_Addresses</member>
     </source>
     <destination>
-        <member>enodeB_Subnet</member>
-        <member>MME_Subnet</member>
-        <member>SGW_Subnet</member>
+        <member>eNodeB_Addresses</member>
+        <member>MME_Addresses</member>
+        <member>SGW_Addresses</member>
     </destination>
     <source-user>
         <member>any</member>
