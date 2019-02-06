@@ -38,7 +38,6 @@ Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/MobileSkillet/
 This is a Palo Alto Networks community project.
 
 ## Authors
-
 * Mitch Rappard - [(@mitch-pan)](https://github.com/mitch-pan)
 * Scott Shoaf - [(@scotchoaf)](https://github.com/scotchoaf)
 * Edward Arcuri - [(@punisherVX)](https://github.com/punisherVX)
