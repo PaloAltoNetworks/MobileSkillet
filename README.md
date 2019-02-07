@@ -1,15 +1,18 @@
-# Mobile Templates
+# Mobile Skillet
 
 ###  Best Practice templates for Palo Alto Networks NGFW for Mobile Networks.
-The purpose of these templates is to provide Day 1 best-practice configuration templates for Mobile Networks that can be loaded into a Palo Alto Networks NGFW.
-These templates are in addition to the [Iron-Skillet](https://github.com/PaloAltoNetworks/iron-skillet) NGFW best-practices templates
+Templates and documentation are based on PAN-OS sofware release version.
 
-The mobile template details and usage are documented here: <br/>
-[Mobile Template Documentation](http://github.com/PaloAltoNetworks/mobile-templates)
+Currently supported versions are:
 
+<b>8.0</b> TODO
 
+<b>8.1</b>
+[Templates](https://github.com/PaloAltoNetworks/MobileSkillet/tree/panos_v8.1)
+
+See also [Iron Skillet](https://github.com/PaloAltoNetworks/iron-skillet) for non Mobile templates
 ## Contributing
-Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/mobile-templates/CONTRIBUTING.md) for details on how you can help contribute to this project.
+Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/mobileskillet/CONTRIBUTING.md) for details on how you can help contribute to this project.
 
 ## Support
 This is a Palo Alto Networks community project.
