@@ -1,4 +1,4 @@
-# Mobile-Skillet
+# Mobile-Skillet for PANOS 8.0
 
 ###  Best Practice templates for Palo Alto Networks NGFW for Mobile Networks.
 The purpose of these templates is to provide Day 1 best-practice configuration templates for Mobile Networks that can be loaded into a Palo Alto Networks NGFW.
@@ -19,7 +19,7 @@ Then point your browser to localhost:9999.
 From Panhandler use the drop down menu to import MobileSkillet:
 * <b>Repository Name:</b> MobileSkillet
 * <b>Git Repository HTTPS URL:</b> https://github.com/PaloAltoNetworks/MobileSkillet.git
-* <b>Branch:</b> panos_v8.1
+* <b>Branch:</b> panos_v8.0
 
 After a successful import you should see 5 configuration snippets in your Template library under Pan-OS.
 * Mobile SIGTRAN Configuration
