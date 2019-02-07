@@ -617,30 +617,43 @@
             </sctp-diameter>
         </sctp-filtering>
     </entry>
-    <entry version="1.0" name="SIGTRAN_Alert_Cat1">
+    <entry version="1.0" name="SIGTRAN_Protection">
         <sctp-filtering>
             <sctp-ss7>
                 <entry name="GSMA CAT1 MAP Filter">
                     <ss7-cp-ssn>
                         <entry name="any-map">
                             <ss7-op-code>
-                                <member>SendRoutingInfo</member>
-                                <member>SendRoutingInfoForLCS</member>
-                                <member>SendRoutingInfoForGprs</member>
-                                <member>SendIMSI</member>
                                 <member>AnyTimeInterrogation</member>
-                                <member>AnyTimeSubscriptionInterrogation</member>
-                                <member>FailureReport</member>
                                 <member>AnyTimeModification</member>
-                                <member>SendIdentification</member>
-                                <member>ResumeCallHandling</member>
-                                <member>SendParameters</member>
-                                <member>UnstructuredSSRequest</member>
-                                <member>UnstructuredSSNotify</member>
-                                <member>RemoteUserFree</member>
+                                <member>AnyTimeSubscriptionInterrogation</member>
                                 <member>CheckIMEI</member>
+                                <member>FailureReport</member>
                                 <member>NoteSubscriberDataModified</member>
+                                <member>RemoteUserFree</member>
+                                <member>ResumeCallHandling</member>
+                                <member>SendIdentification</member>
+                                <member>SendIMSI</member>
+                                <member>SendParameters</member>
+                                <member>SendRoutingInfo</member>
+                                <member>SendRoutingInfoForGprs</member>
+                                <member>SendRoutingInfoForLCS</member>
                                 <member>SubscriberLocationReport</member>
+                                <member>UnstructuredSSNotify</member>
+                                <member>UnstructuredSSRequest</member>
+                            </ss7-op-code>
+                            <ss7-cp-gt>
+                                <member>any</member>
+                            </ss7-cp-gt>
+                        </entry>
+                    </ss7-cp-ssn>
+                    <action>block</action>
+                </entry>
+                <entry name="Alert All Opcodes">
+                    <ss7-cp-ssn>
+                        <entry name="any-map">
+                            <ss7-op-code>
+                                <member>any</member>
                             </ss7-op-code>
                             <ss7-cp-gt>
                                 <member>any</member>
