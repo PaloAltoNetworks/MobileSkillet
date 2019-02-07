@@ -1,0 +1,11 @@
+<entry name="SIGTRAN_Addresses">
+  <static>
+    <member>SIGTRAN_Subnet</member>
+  </static>
+  <description>Local SIGTRAN endpoints</description>
+</entry>
+<entry name="Peer_SIGTRAN_Addresses">
+  <static>
+    <member>Peer_SIGTRAN_Subnet</member>
+  </static>
+</entry>

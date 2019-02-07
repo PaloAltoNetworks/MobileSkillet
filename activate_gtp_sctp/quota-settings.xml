@@ -1,0 +1,25 @@
+<disk-quota>
+  <alarm>3</alarm>
+  <appstat>4</appstat>
+  <trsum>7</trsum>
+  <thsum>2</thsum>
+  <gtpsum>2</gtpsum>
+  <hourlygtpsum>1</hourlygtpsum>
+  <dailygtpsum>1</dailygtpsum>
+  <weeklygtpsum>1</weeklygtpsum>
+  <sctpsum>2</sctpsum>
+  <hourlysctpsum>1</hourlysctpsum>
+  <dailysctpsum>1</dailysctpsum>
+  <weeklysctpsum>1</weeklysctpsum>
+  <hipmatch>1</hipmatch>
+  <dlp-logs>1</dlp-logs>
+  <application-pcaps>1</application-pcaps>
+  <debug-filter-pcaps>1</debug-filter-pcaps>
+  <hip-reports>1</hip-reports>
+  <gtp>1</gtp>
+  <sctp>1</sctp>
+  <traffic>10</traffic>
+  <threat>10</threat>
+  <config>4</config>
+  <system>4</system>
+</disk-quota>

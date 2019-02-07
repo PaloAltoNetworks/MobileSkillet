@@ -1,8 +1,8 @@
-name: mobile-roaming
-label: Mobile Roaming Snippets
+name: mobile-roaming-v81
+label: v8.1 Mobile Roaming Snippets
 description: Mobile Roaming Configuration
 type: panos
-extends: mobile_baseline_panos
+extends: mobile-baseline-v81
 
 labels:
   service_type: mobile_panos
@@ -28,6 +28,10 @@ variables:
     description: Peer SGW Subnet
     default: 192.168.1.0/24
     type_hint: ip_address
+  - name: PEER_MME_SUBNET
+    description: Peer MME Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
   - name: PEER_PGW_SUBNET
     description: Peer PGW Subnet
     default: 192.168.1.0/24
@@ -45,6 +49,9 @@ snippets:
   - name: roaming-addresses
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
     file: roaming-addresses.xml
+  - name: roaming-address-groups
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address-group
+    file: roaming-address-groups.xml
   - name: roaming-security-rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: roaming-security-rules.xml

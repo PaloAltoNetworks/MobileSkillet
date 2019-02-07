@@ -1,8 +1,8 @@
-name: mobile-sigtan
-label: Mobile Sigtran Snippets
-description: Mobile Sigtran Configuration
+name: mobile-sigtran-v81
+label: v8.1 Mobile SIGTRAN Snippets
+description: Mobile SIGTRAN Configuration
 type: panos
-extends: mobile_baseline_panos
+extends: mobile-baseline-v81
 
 labels:
   service_type: mobile_panos
@@ -21,6 +21,9 @@ snippets:
   - name: sigtran-addresses
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
     file: sigtran-addresses.xml
+  - name: sigtran-address-groups
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address-group
+    file: sigtran-address-groups.xml
   - name: sigtran-security-rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: sigtran-security-rules.xml

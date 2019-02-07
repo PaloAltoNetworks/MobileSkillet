@@ -1,8 +1,8 @@
-name: mobile-ran
-label: Mobile RAN Snippets
+name: mobile-ran-v81
+label: v8.1 Mobile RAN Snippets
 description: Mobile RAN Configuration
 type: panos
-extends: mobile_baseline_panos
+extends: mobile-baseline-v81
 
 labels:
   service_type: mobile_panos
@@ -11,19 +11,19 @@ variables:
   - name: ENODEB_SUBNET
     description: enodeB Subnet
     default: 192.168.1.0/24
-    type_hint: ip_address
+    type_hint: text
   - name: MME_SUBNET
     description: MME Subnet
     default: 192.168.1.0/24
-    type_hint: ip_address
+    type_hint: text
   - name: SGW_SUBNET
     description: SGW Subnet
     default: 192.168.1.0/24
-    type_hint: ip_address
+    type_hint: text
   - name: SUB_SUBNET
     description: Subscriber Subnet
     default: 192.168.1.0/24
-    type_hint: ip_address
+    type_hint: text
   
 snippets:
   - name: ran-addresses

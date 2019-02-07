@@ -5,7 +5,7 @@
                 <member>Alert-Low-to-Critical</member>
             </vulnerability>
             <sctp>
-                <member>SIGTRAN_Alert_Cat1</member>
+                <member>SIGTRAN_Protection</member>
             </sctp>
         </profiles>
     </profile-setting>

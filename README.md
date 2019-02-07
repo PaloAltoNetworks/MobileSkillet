@@ -1,21 +1,43 @@
-# Mobile Templates
+# Mobile-Skillet
 
 ###  Best Practice templates for Palo Alto Networks NGFW for Mobile Networks.
 The purpose of these templates is to provide Day 1 best-practice configuration templates for Mobile Networks that can be loaded into a Palo Alto Networks NGFW.
 These templates are in addition to the [Iron-Skillet](https://github.com/PaloAltoNetworks/iron-skillet) NGFW best-practices templates
 
 The mobile template details and usage are documented here: <br/>
-[Mobile Template Documentation](http://github.com/PaloAltoNetworks/mobile-templates)
+[Mobile Skillet Documentation](http://github.com/PaloAltoNetworks/mobileskillet)
 
+
+## Getting Started
+Mobile-Skillet is best used from within [Panhandler](https://github.com/PaloAltoNetworks/panhandler).  The easiest way to use Panhandler is to do 
+so through Docker.  
+
+To start Panhandler: `docker run -p 9999:80 paloaltonetworks/panhandler:latest`
+
+Then point your browser to localhost:9999.
+
+From Panhandler use the drop down menu to import MobileSkillet:
+* <b>Repository Name:</b> MobileSkillet
+* <b>Git Repository HTTPS URL:</b> https://github.com/PaloAltoNetworks/MobileSkillet.git
+* <b>Branch:</b> panos_v8.1
+
+After a successful import you should see 5 configuration snippets in your Template library under Pan-OS.
+* Mobile SIGTRAN Configuration
+* Mobile RAN Configuration
+* Mobile Roaming Configuration
+* Activation of GTP and SCTP capabilities
+* Mobile Basline Configuration
+
+Always run "Activation of GTP and SCTP capabilities" first, then "Mobile Baseline Configuration".  From there you can run 
+RAN/Roaming/SIGTRAN as needed.
 
 ## Contributing
-Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/mobile-templates/CONTRIBUTING.md) for details on how you can help contribute to this project.
+Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/MobileSkillet/CONTRIBUTING.md) for details on how you can help contribute to this project.
 
 ## Support
 This is a Palo Alto Networks community project.
 
 ## Authors
-
 * Mitch Rappard - [(@mitch-pan)](https://github.com/mitch-pan)
 * Scott Shoaf - [(@scotchoaf)](https://github.com/scotchoaf)
 * Edward Arcuri - [(@punisherVX)](https://github.com/punisherVX)

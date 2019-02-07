@@ -1,0 +1,23 @@
+name: activate_gtp_stp_v81
+label: v8.1 Activate GTP and SCTP logging
+description: Activation of GTP and SCTP capabilities
+type: panos
+extends:
+
+labels:
+  service_type: mobile_panos
+
+variables:
+  - name: PLACEHOLDER
+    description: Variable Placeholder
+    default: Ignore
+    type_hint: text
+
+
+snippets:
+  - name: set_log_quotas
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting/management/quota-settings
+    file: quota-settings.xml
+  - name: activate_gtp_sctp
+    xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+    file: activate_gtp_sctp.xml
