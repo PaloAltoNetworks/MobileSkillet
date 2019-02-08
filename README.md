@@ -1,4 +1,4 @@
-# Mobile-Skillet for PANOS 8.1
+# Mobile-Skillet for PANOS v8.1
 
 ###  Best Practice templates for Palo Alto Networks NGFW for Mobile Networks.
 The purpose of these templates is to provide Day 1 best-practice configuration templates for Mobile Networks that can be loaded into a Palo Alto Networks NGFW.

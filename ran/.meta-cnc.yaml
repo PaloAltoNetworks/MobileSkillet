@@ -29,6 +29,9 @@ snippets:
   - name: ran-addresses
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
     file: ran-addresses.xml
+  - name: ran-address-groups
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address-group
+    file: ran-address-groups.xml
   - name: ran-security-rules
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
     file: ran-security-rules.xml

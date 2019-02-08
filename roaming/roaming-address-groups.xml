@@ -38,9 +38,5 @@
     <member>HSS_Subnet</member>
   </static>
 </entry>
-<entry name="eNodeB_Addresses">
-  <static>
-    <member>enodeB_Subnet</member>
-  </static>
-</entry>
+
 
