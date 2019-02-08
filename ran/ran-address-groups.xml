@@ -3,11 +3,6 @@
         <member>SGW_Subnet</member>
     </static>
 </entry>
-<entry name="PGW_Addresses">
-    <static>
-        <member>PGW_Subnet</member>
-    </static>
-</entry>
 <entry name="MME_Addresses">
     <static>
         <member>MME_Subnet</member>
