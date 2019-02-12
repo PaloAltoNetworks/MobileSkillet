@@ -1,0 +1,22 @@
+name: mobile-sigtran-set-v81
+label: v8.1 Mobile Sigtran Snippets as Set Commands
+description: Mobile Sigtran Configuration as Set Commands
+type: template
+extends:
+
+labels:
+  service_type: mobile_base_panos
+
+variables:
+  - name: SIGTRAN_SUBNET
+    description: Sigtran Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_SIGTRAN_SUBNET
+    description: Peer Sigtran Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+
+snippets:
+  - name: mobile-skillet-sigtran.conf
+    file: mobile-skillet-sigtran.conf

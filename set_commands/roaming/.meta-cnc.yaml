@@ -1,0 +1,54 @@
+name: mobile-roaming-set-v81
+label: v8.1 Mobile Roaming Snippets as Set Commands
+description: Mobile Roaming Configuration as Set Commands
+type: template
+extends:
+
+labels:
+  service_type: mobile_base_panos
+
+variables:
+  - name: ZONE_TAP
+    description: Zone Tapper
+    default: tap
+    type_hint: text
+  - name: MME_SUBNET
+    description: MME Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: SGW_SUBNET
+    description: SGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: SUB_SUBNET
+    description: Subscriber Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PGW_SUBNET
+    description: PGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_SGW_SUBNET
+    description: Peer SGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_MME_SUBNET
+    description: Peer MME Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_PGW_SUBNET
+    description: Peer PGW Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: HSS_SUBNET
+    description: HSS Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+  - name: PEER_HSS_SUBNET
+    description: Peer HSS Subnet
+    default: 192.168.1.0/24
+    type_hint: ip_address
+
+snippets:
+  - name: mobile-skillet-roaming.conf
+    file: mobile-skillet-roaming.conf
