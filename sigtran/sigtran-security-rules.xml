@@ -10,10 +10,10 @@
         </profiles>
     </profile-setting>
     <to>
-        <member>Tap</member>
+        <member>{{ INTF_TAP }}</member>
     </to>
     <from>
-        <member>Tap</member>
+        <member>{{ INTF_TAP }}</member>
     </from>
     <source>
     <member>Peer_SIGTRAN_Addresses</member>
