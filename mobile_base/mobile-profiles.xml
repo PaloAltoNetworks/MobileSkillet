@@ -48,24 +48,6 @@
                 <eutran>allow</eutran>
                 <virtual>alert</virtual>
             </rat>
-            <imsi-prefix>
-                <entry name="311580*">
-                    <description>USCC Subs</description>
-                    <action>allow</action>
-                </entry>
-                <entry name="310120*">
-                    <description>Sprint Subs</description>
-                    <action>allow</action>
-                </entry>
-                <entry name="310260*">
-                    <description>T-Mobile Subs</description>
-                    <action>allow</action>
-                </entry>
-                <entry name="*">
-                    <description>All others</description>
-                    <action>alert</action>
-                </entry>
-            </imsi-prefix>
         </filtering>
         <gtp-log>
             <user-location>yes</user-location>
