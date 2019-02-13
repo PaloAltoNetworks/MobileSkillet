@@ -1,0 +1,46 @@
+name: mobile-baseline-set-v81
+label: v8.1 Mobile Baseline Snippets as Set Commands
+description: Mobile Basline Configuration as Set Commands
+type: template
+extends:
+
+labels:
+  service_type: mobile_base_panos
+
+variables:
+  - name: FW_NAME
+    description: Device Name
+    default: panos-01
+    type_hint: text
+  - name: INTF_TAP
+    description: TAP Interface
+    default: ethernet1/1
+    type_hint: text
+  - name: ZONE_TAP
+    description: Zone Tapper
+    default: tap
+    type_hint: text
+  - name: DNS_1
+    description: Primary DNS Server
+    default: 8.8.8.8
+    type_hint: ip_address
+  - name: DNS_2
+    description: Secondary DNS Server
+    default: 8.8.4.4
+    type_hint: ip_address
+  - name: NTP_1
+    description: Primary NTP Server
+    default: pool.ntp.org
+    type_hint: ip_address
+  - name: NTP_2
+    description: Secondary NTP Server
+    default: pool.ntp.org
+    type_hint: ip_address
+  - name: SFN_SERVER
+    description: SafeNetworking Server IP
+    default: 192.168.1.1
+    type_hint: ip_address
+
+snippets:
+  - name: mobile-skillet-baseline.conf
+    file: mobile-skillet-baseline.conf
