@@ -2,7 +2,7 @@ name: mobile-sigtran-set-v81
 label: v8.1 Mobile Sigtran Snippets as Set Commands
 description: Mobile Sigtran Configuration as Set Commands
 type: template
-extends:
+extends: mobile-baseline-v81
 
 labels:
   service_type: mobile_base_panos

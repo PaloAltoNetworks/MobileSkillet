@@ -2,7 +2,7 @@ name: mobile-baseline-set-v81
 label: v8.1 Mobile Baseline Snippets as Set Commands
 description: Mobile Basline Configuration as Set Commands
 type: template
-extends:
+extends: mobile-baseline-v81
 
 labels:
   service_type: mobile_base_panos
