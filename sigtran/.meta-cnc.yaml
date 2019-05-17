@@ -5,7 +5,8 @@ type: panos
 extends: mobile-baseline-v81
 
 labels:
-  service_type: mobile_panos
+  collection:
+    - MobileSkillet
 
 variables:
   - name: SIGTRAN_SUBNET
