@@ -1,0 +1,4 @@
+<entry name="h_UEPool__1">
+  <ip-netmask>{{ UEIPPool }}</ip-netmask>
+  <description>Subscriber UE assigned IP addresses</description>
+</entry>

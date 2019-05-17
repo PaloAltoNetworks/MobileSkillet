@@ -1,0 +1,7 @@
+<entry name="TAPZONE">
+  <network>
+    <tap>
+      <member>{{ TAPNIC }}</member>
+    </tap>
+  </network>
+</entry>

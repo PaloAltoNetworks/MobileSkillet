@@ -1,0 +1,111 @@
+# ---------------------------------------------------------------------
+# skillet preamble information used by panhandler
+# unique snippet name
+name: 9.0 Tap Mode Mobile PoC Config
+# label used for menu selection
+label: 9.0 Mobile TAP Mode PoC
+description: Generic config for TAP mode to start a Mobile PoC
+type: panos
+extends:
+labels:
+  collection:
+    - MobileSkillet
+# end of preamble section
+# ---------------------------------------------------------------------
+# variables section
+#
+variables:
+#
+ - name: DNS_1
+   description: Primary DNS Server
+   default: 8.8.8.8
+   type_hint: ip_address
+
+ - name: DNS_2
+   description: Secondary DNS Server
+   default: 8.8.4.4
+   type_hint: ip_address
+
+ - name: NTP_1
+   description: Primary NTP Server
+   default: pool.ntp.org
+   type_hint: ip_address
+
+ - name: NTP_2
+   description: Secondary NTP Server
+   default: pool.ntp.org
+   type_hint: ip_address
+
+ - name: UEIPPool
+   description: IP Pool for own subscribers UE
+   default: 100.64.0.0/16
+   type_hint: text
+
+ - name: SFN35ServerIP
+   description: IP address of SFN3.5 Server
+   default: 10.0.0.1
+   type_hint: text
+
+ - name: TAPNIC
+   description: Interface for TAP zone
+   default: ethernet1/1
+   type_hint: text
+#
+# ---------------------------------------------------------------------
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+#
+ - name: device_system
+   xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
+   file: device_system.xml
+
+ - name: device_setting
+   xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/setting
+   file: device_setting.xml
+
+ - name: Objects
+   xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
+   file: AddrObject.xml
+
+ - name: SFNServerProfile
+   xpath: /config/shared/log-settings/syslog
+   file: SFNServerProfile.xml
+
+ - name: Interface
+   xpath: /config/devices/entry[@name='localhost.localdomain']/network/interface/ethernet
+   file: TAPNIC.xml
+
+ - name: Zone
+   xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/zone
+   file: Zone.xml
+
+ - name: DiskLogQuotaAndEnableSCTPGTP
+   xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig
+   file: DiskLogQuotaAndEnableSCTPGTP.static.xml
+
+ - name: ZoneProtect_IPOnly
+   xpath: /config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile
+   file: ZoneProtectIPOnly.static.xml
+
+ - name: GTPProfile
+   xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/gtp
+   file: GTPProfileLogTunnel.static.xml
+
+ - name: SCTPProfile
+   xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/sctp
+   file: SCTPProfileCommonS6SS7.static.xml
+
+ - name: VulnProfile_FloodAndBrute
+   xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/vulnerability
+   file: VulnProfile_FloodAndBrute.static.xml
+
+ - name: SFNForwardingProfile
+   xpath: /config/shared/log-settings/profiles
+   file: SFNForwardingProfile.static.xml
+
+ - name: Rules
+   xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+   file: RulesPOCTAPGeneric.xml
