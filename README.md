@@ -8,10 +8,11 @@ The mobile template details and usage are documented here: <br/>
 
 Currently supported versions are:
 
-<b>8.0</b> TODO
-
 <b>8.1</b>
 [Templates](https://github.com/PaloAltoNetworks/MobileSkillet/tree/panos_v8.1)
+
+<b>9.0</b>
+[Templates](https://github.com/PaloAltoNetworks/MobileSkillet/tree/panos_v9.0)
 
 ## Getting Started
 Mobile-Skillet is best used from within [Panhandler](https://github.com/PaloAltoNetworks/panhandler).  The easiest way to use Panhandler is to do 
@@ -24,17 +25,22 @@ Then point your browser to localhost:9999.
 From Panhandler use the drop down menu to import MobileSkillet:
 * <b>Repository Name:</b> MobileSkillet
 * <b>Git Repository HTTPS URL:</b> https://github.com/PaloAltoNetworks/MobileSkillet.git
-* <b>Branch:</b> panos_v8.1
+* <b>Branch:</b> panos_v9.0
 
-After a successful import you should see 5 configuration snippets in your Template library under Pan-OS.
-* Mobile SIGTRAN Configuration
-* Mobile RAN Configuration
-* Mobile Roaming Configuration
-* Activation of GTP and SCTP capabilities
-* Mobile Basline Configuration
+After a successful import you should a MobileSkillet collection.  If you navigate to that collection you
+should see a "9.0 Mobile TAP Mode PoC" skillet.  This template will 
 
-Always run "Activation of GTP and SCTP capabilities" first, then "Mobile Baseline Configuration".  From there you can run 
-RAN/Roaming/SIGTRAN as needed.
+* Enable SCTP and GTP functionality in system settings
+* Set the disk quotas for logs
+* Create a TAPZONE and put the selected interface into it
+* Assign a Zone Protection Profile IPOnly that blocks non-IPv4, non-IPv6 and non-VLAN ethertypes
+* Creata an SCTP Protection Profile with filtering functions for DIAMETER and SIGTRAN
+* Create a GTP Protection Profile with GTP-U inspection and allowed logging settings for watermarking GTP
+* Create a Vulnerability Profile with suitable exceptions for Flood and Bruteforce protection
+* Configure Forwarding of Threat and GTP logs to the [Safe Networking](https://github.com/PaloAltoNetworks/safe-networking) 
+server you specify
+* Create an Address Object for the Mobile Subscribers UE (default is CGNAT)
+* Create a basic Security Policy that sorts the traffic by App-ID based rules
 
 ## Contributing
 Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/MobileSkillet/CONTRIBUTING.md) for details on how you can help contribute to this project.
@@ -46,9 +52,11 @@ This is a Palo Alto Networks community project.
 
 ## Authors
 * Mitch Rappard - [(@mitch-pan)](https://github.com/mitch-pan)
+* Mario Penners - [(@pennersm)](https://github.com/pennersm)
 * Scott Shoaf - [(@scotchoaf)](https://github.com/scotchoaf)
 * Edward Arcuri - [(@punisherVX)](https://github.com/punisherVX)
 * Nathan Embery - [(@nembery)](https://github.com/nembery)
+
 
 See also the list of [contributors](https://github.com/PaloAltoNetworks/mobile-templates/contributors) who have participated in this project.
 
