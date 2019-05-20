@@ -1,14 +1,17 @@
 # Mobile Skillet
 
 ###  Best Practice templates for Palo Alto Networks NGFW for Mobile Networks.
-Templates and documentation are based on PAN-OS sofware release version.
+Templates and documentation are based on PAN-OS sofware release version.  The goal of 
+Mobile Skillet is to enable rapid deployment of PoC configs for mobile networks that need visibility
+into EPC protocols such as GTP, SCTP, SIGTRAN and DIAMETER.
 
 Currently supported versions are:
 
-<b>8.0</b> TODO
-
 <b>8.1</b>
 [Templates](https://github.com/PaloAltoNetworks/MobileSkillet/tree/panos_v8.1)
+
+<b>9.0</b>
+[Templates](https://github.com/PaloAltoNetworks/MobileSkillet/tree/panos_v9.0)
 
 See also [Iron Skillet](https://github.com/PaloAltoNetworks/iron-skillet) for non Mobile templates
 ## Contributing
@@ -20,6 +23,7 @@ This is a Palo Alto Networks community project.
 ## Authors
 
 * Mitch Rappard - [(@mitch-pan)](https://github.com/mitch-pan)
+* Mario Penners - [(@pennersm)](https://github.com/pennersm)
 * Scott Shoaf - [(@scotchoaf)](https://github.com/scotchoaf)
 * Edward Arcuri - [(@punisherVX)](https://github.com/punisherVX)
 * Nathan Embery - [(@nembery)](https://github.com/nembery)
