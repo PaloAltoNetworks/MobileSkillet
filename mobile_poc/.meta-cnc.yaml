@@ -1,9 +1,9 @@
 # ---------------------------------------------------------------------
 # skillet preamble information used by panhandler
 # unique snippet name
-name: 9.0 Tap Mode Mobile PoC Config
+name: 8.1 Tap Mode Mobile PoC Config
 # label used for menu selection
-label: 9.0 Mobile TAP Mode PoC
+label: 8.1 Mobile TAP Mode PoC
 description: Generic config for TAP mode to start a Mobile PoC
 type: panos
 extends:
