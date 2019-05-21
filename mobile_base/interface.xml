@@ -1,5 +1,0 @@
-<ethernet>
-    <entry name="{{ INTF_TAP }}">
-        <tap/>
-    </entry>
-</ethernet>
