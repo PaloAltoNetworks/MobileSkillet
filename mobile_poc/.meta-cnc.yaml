@@ -29,12 +29,12 @@ variables:
  - name: NTP_1
    description: Primary NTP Server
    default: pool.ntp.org
-   type_hint: ip_address
+   type_hint: text
 
  - name: NTP_2
    description: Secondary NTP Server
    default: pool.ntp.org
-   type_hint: ip_address
+   type_hint: text
 
  - name: UEIPPool
    description: IP Pool for own subscribers UE
