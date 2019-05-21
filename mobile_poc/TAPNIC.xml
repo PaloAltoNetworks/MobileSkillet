@@ -1,0 +1,5 @@
+<entry name="{{ TAPNIC }}">
+  <comment>PoC in TAP mode</comment>
+  <tap/>
+  <link-state>auto</link-state>
+</entry>

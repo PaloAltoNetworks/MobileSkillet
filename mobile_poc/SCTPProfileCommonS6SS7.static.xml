@@ -1,0 +1,152 @@
+<entry name="SCTP--Common-S6SS7">
+  <sctp-filtering>
+    <sctp-ppid>
+      <entry name="Roaming end">
+        <ppid>M2PA</ppid>
+        <action>allow</action>
+      </entry>
+      <entry name="Internal">
+        <ppid>M3UA</ppid>
+        <action>allow</action>
+      </entry>
+      <entry name="DIAMETER-overTLS">
+        <ppid>46</ppid>
+        <action>allow</action>
+      </entry>
+      <entry name="DIAMETER-cleartext">
+        <ppid>47</ppid>
+        <action>allow</action>
+      </entry>
+      <entry name="unspecified">
+        <ppid>0</ppid>
+        <action>allow</action>
+      </entry>
+      <entry name="S1 MME">
+        <ppid>S1AP</ppid>
+        <action>allow</action>
+      </entry>
+      <entry name="anything else">
+        <ppid>any</ppid>
+        <action>alert</action>
+      </entry>
+    </sctp-ppid>
+    <sctp-diameter>
+      <entry name="S6--MME-to-HSS">
+        <diameter-application-id>
+          <entry name="3GPP-S6a/S6d">
+            <diameter-cmd-code>
+              <member>3GPP-Authentication-Information</member>
+              <member>3GPP-Notify</member>
+              <member>3GPP-Purge-UE</member>
+              <member>3GPP-Update-Location</member>
+            </diameter-cmd-code>
+            <diameter-avp>
+              <member>any</member>
+            </diameter-avp>
+          </entry>
+        </diameter-application-id>
+        <action>allow</action>
+      </entry>
+      <entry name="S6--HSS-to-MME">
+        <diameter-application-id>
+          <entry name="3GPP-S6a/S6d">
+            <diameter-cmd-code>
+              <member>3GPP-Cancel-Location</member>
+              <member>3GPP-Delete-Subscriber-Data</member>
+              <member>3GPP-Insert-Subscriber-Data</member>
+            </diameter-cmd-code>
+            <diameter-avp>
+              <member>any</member>
+            </diameter-avp>
+          </entry>
+        </diameter-application-id>
+        <action>allow</action>
+      </entry>
+      <entry name="RESET">
+        <diameter-application-id>
+          <entry name="3GPP-S6a/S6d">
+            <diameter-cmd-code>
+              <member>3GPP-Reset</member>
+            </diameter-cmd-code>
+            <diameter-avp>
+              <member>any</member>
+            </diameter-avp>
+          </entry>
+        </diameter-application-id>
+        <action>alert</action>
+      </entry>
+      <entry name="S6--BASE">
+        <diameter-application-id>
+          <entry name="Diameter Common Messages">
+            <diameter-cmd-code>
+              <member>Abort-Session</member>
+              <member>Accounting</member>
+              <member>Capabilities-Exchange</member>
+              <member>Device-Watchdog</member>
+              <member>Disconnect-Peer</member>
+              <member>Re-Auth</member>
+              <member>Session-Termination</member>
+            </diameter-cmd-code>
+            <diameter-avp>
+              <member>any</member>
+            </diameter-avp>
+          </entry>
+        </diameter-application-id>
+        <action>allow</action>
+      </entry>
+      <entry name="OTHER">
+        <diameter-application-id>
+          <entry name="any">
+            <diameter-cmd-code>
+              <member>any</member>
+            </diameter-cmd-code>
+            <diameter-avp>
+              <member>any</member>
+            </diameter-avp>
+          </entry>
+        </diameter-application-id>
+        <action>alert</action>
+      </entry>
+    </sctp-diameter>
+    <sctp-ss7>
+      <entry name="suspicious--Sigtran">
+        <ss7-cp-ssn>
+          <entry name="any-map">
+            <ss7-op-code>
+              <member>ActivateTraceMode</member>
+              <member>AnyTimeInterrogation</member>
+              <member>AnyTimeModification</member>
+              <member>AnyTimeSubscriptionInterrogation</member>
+              <member>ProvideSubscriberLocation</member>
+              <member>Reset</member>
+              <member>RestoreData</member>
+              <member>UnstructuredSSNotify</member>
+              <member>UnstructuredSSRequest</member>
+            </ss7-op-code>
+            <ss7-cp-gt>
+              <member>any</member>
+            </ss7-cp-gt>
+          </entry>
+        </ss7-cp-ssn>
+        <action>alert</action>
+      </entry>
+    </sctp-ss7>
+  </sctp-filtering>
+  <sctp-inspection>
+    <validity-checks>
+      <unknown-chunk>block</unknown-chunk>
+      <chunk-flags>block</chunk-flags>
+      <invalid-length>block</invalid-length>
+    </validity-checks>
+    <log-setting>
+      <sctp-start>yes</sctp-start>
+      <sctp-end>yes</sctp-end>
+      <init-chunks>yes</init-chunks>
+      <heartbeat-chunks>no</heartbeat-chunks>
+      <termination-chunks>no</termination-chunks>
+      <all-control-chunks>no</all-control-chunks>
+    </log-setting>
+    <multihoming>4</multihoming>
+  </sctp-inspection>
+  <description>S6a plus DIAMETER BASE commands; SIGTRAN with MAP suspicious alert</description>
+</entry>
