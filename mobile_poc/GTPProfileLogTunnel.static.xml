@@ -66,6 +66,5 @@
       <others>no</others>
     </gtpv2c-allowed-messages>
     <user-location>yes</user-location>
-    <packet-capture>no</packet-capture>
   </gtp-log>
 </entry>
