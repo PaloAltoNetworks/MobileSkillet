@@ -1,0 +1,23 @@
+<entry name="gtptoSFN35">
+   <match-list>
+       <entry name="SFN35_gtp">
+       <send-syslog>
+         <member>gtptoSFN35</member>
+       </send-syslog>
+       <log-type>gtp</log-type>
+       <filter>All Logs</filter>
+       <send-to-panorama>no</send-to-panorama>
+     </entry>
+   </match-list>
+</entry><entry name="threattoSFN35">
+   <match-list>
+       <entry name="SFN35_threat">
+       <send-syslog>
+         <member>threattoSFN35</member>
+       </send-syslog>
+       <log-type>threat</log-type>
+       <filter>All Logs</filter>
+       <send-to-panorama>no</send-to-panorama>
+     </entry>
+   </match-list>
+</entry>
