@@ -1,17 +1,9 @@
 # Mobile Skillet
 
 ###  Best Practice templates for Palo Alto Networks NGFW for Mobile Networks.
-Templates and documentation are based on PAN-OS sofware release version.
-
-The mobile template details and usage are documented here: <br/>
-[Mobile Skillet Documentation](http://github.com/PaloAltoNetworks/mobileskillet)
-
-Currently supported versions are:
-
-<b>8.0</b> TODO
-
-<b>8.1</b>
-[Templates](https://github.com/PaloAltoNetworks/MobileSkillet/tree/panos_v8.1)
+Templates and documentation are based on PAN-OS sofware release version.  The details and templates in this branch are 
+spefic to PAN-OS 8.1.  If you have a different version of PAN-OS please see the documentation
+for that branch.
 
 ## Getting Started
 Mobile-Skillet is best used from within [Panhandler](https://github.com/PaloAltoNetworks/panhandler).  The easiest way to use Panhandler is to do 
@@ -22,19 +14,29 @@ To start Panhandler: `docker run -p 9999:80 paloaltonetworks/panhandler:latest`
 Then point your browser to localhost:9999.
 
 From Panhandler use the drop down menu to import MobileSkillet:
-* <b>Repository Name:</b> MobileSkillet
+* <b>Repository Name:</b> MobileSkillet - 8.1
 * <b>Git Repository HTTPS URL:</b> https://github.com/PaloAltoNetworks/MobileSkillet.git
 * <b>Branch:</b> panos_v8.1
 
-After a successful import you should see 5 configuration snippets in your Template library under Pan-OS.
-* Mobile SIGTRAN Configuration
-* Mobile RAN Configuration
-* Mobile Roaming Configuration
-* Activation of GTP and SCTP capabilities
-* Mobile Basline Configuration
+After a successful import you should a MobileSkillet collection.  If you navigate to that collection you
+should see a "9.0 Mobile TAP Mode PoC" skillet.  This template will configure a Palo Alto Networks
+firewall with a tap interface, security policies, appropriate profiles (GTP, SCTP, etc.) and other configuration
+settings useful during a Tap mode PoC. 
 
-Always run "Activation of GTP and SCTP capabilities" first, then "Mobile Baseline Configuration".  From there you can run 
-RAN/Roaming/SIGTRAN as needed.
+Current Actions taken by this Skillet:
+
+* Configure NTP and DNS settings
+* Enable SCTP and GTP functionality in system settings
+* Set the disk quotas for logs
+* Create a zone "TAPZONE" and put the selected interface into it
+* Assign a Zone Protection Profile "IPOnly" that blocks non-IPv4, non-IPv6 and non-VLAN ethertypes
+* Creata an SCTP Protection Profile with filtering functions for DIAMETER and SIGTRAN
+* Create a GTP Protection Profile with GTP-U inspection and allowed logging settings for watermarking GTP
+* Create a Vulnerability Profile with suitable exceptions for Flood and Bruteforce protection
+* Configure Forwarding of Threat and GTP logs to the [Safe Networking](https://github.com/PaloAltoNetworks/safe-networking) 
+server you specify (must be version 3.5 or later for GTP logs)
+* Create an Address Object "h_UEPool___1" for the mobile subscriber endpoints 
+* Create a basic Security Policy that sorts the traffic by App-ID based rules
 
 ## Contributing
 Please read [CONTRIBUTING.md](https://github.com/PaloAltoNetworks/MobileSkillet/CONTRIBUTING.md) for details on how you can help contribute to this project.
@@ -46,9 +48,11 @@ This is a Palo Alto Networks community project.
 
 ## Authors
 * Mitch Rappard - [(@mitch-pan)](https://github.com/mitch-pan)
+* Mario Penners - [(@pennersm)](https://github.com/pennersm)
 * Scott Shoaf - [(@scotchoaf)](https://github.com/scotchoaf)
 * Edward Arcuri - [(@punisherVX)](https://github.com/punisherVX)
 * Nathan Embery - [(@nembery)](https://github.com/nembery)
+
 
 See also the list of [contributors](https://github.com/PaloAltoNetworks/mobile-templates/contributors) who have participated in this project.
 
